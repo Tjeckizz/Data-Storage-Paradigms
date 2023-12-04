@@ -16,9 +16,6 @@ public class preparedstatement {
         String username = "postgres";
         String password = "test";
 
-        // Replace with your specific start time
-       // String specificStartTime = CURRENT_DATE;
-
         try (Connection connection = DriverManager.getConnection(jdbc, username, password)) {
         	String query = "SELECT " +
         	        "  TO_CHAR(l.start_time, 'Dy') AS day, " +
@@ -42,9 +39,7 @@ public class preparedstatement {
         	        "  l.start_time, TO_CHAR(l.start_time, 'Dy'), l.target_genre";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-               // preparedStatement.setString(1, specificStartTime);
-               // preparedStatement.setString(2, specificStartTime);
-
+              
                 System.out.println("Executing SQL query...");
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     System.out.println("Query executed successfully.");
