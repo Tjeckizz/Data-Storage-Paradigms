@@ -26,6 +26,43 @@ VALUES
   (DEFAULT,193695821321,'Stripstallrik Mckee','172-9058 Aenean St.','59983','Skien','5'),
   (DEFAULT,193975179296,'Nuggets Garrett','1425 Feugiat Street','948649','Guaymas','5'),
   (DEFAULT,194540003039,'Oxfile Deleon','8718 Risus. St.','86225','Placilla','5');
+  INSERT INTO students (student_id,personal_number,name,street_name,zip_code,city,discount_percentage)
+VALUES
+  (DEFAULT,201265762368,'Kenneth Kennedy','189-2209 Id Rd.',69769,'Opole',0),
+  (DEFAULT,199100426416,'Georgia Paul','Ap #607-3697 Mus. Avenue',34017,'Kitchener',0),
+  (DEFAULT,199838639966,'Martin Hopper','P.O. Box 566, 4192 Dictum. Street',19134,'Empedrado',0),
+  (DEFAULT,200453184868,'Hayley Allen','Ap #983-7666 In Road',52004,'Shaanxi',0),
+  (DEFAULT,200821573225,'Marah Roman','858 Sodales Rd.',26268,'Sasolburg',0),
+  (DEFAULT,199691259301,'Mia Gallagher','Ap #764-7843 Integer Avenue',79233,'Liberia',0),
+  (DEFAULT,200690887212,'Coby Nielsen','Ap #962-596 Ac Rd.',80543,'Central Water Catchment',0),
+  (DEFAULT,201046307710,'Henry Goodman','980-8908 Primis Ave',40161,'Tonalá',0),
+  (DEFAULT,199699046495,'Armand Leonard','P.O. Box 900, 3775 Tempor Rd.',17991,'Blumenau',0),
+  (DEFAULT,200384085878,'Nayda Huff','P.O. Box 307, 3872 Leo. St.',79193,'Banda Aceh',0),
+  (DEFAULT,199634033658,'Evan Paul','606-7179 Eget, Rd.',90817,'Delft',0),
+  (DEFAULT,200085316199,'Beck Hurst','510-4424 Lectus. Avenue',18203,'Bắc Kạn',0),
+  (DEFAULT,199370555335,'Alisa Williamson','119-1734 Sapien. Street',99512,'Gravelbourg',0),
+  (DEFAULT,201128947689,'Julian Leblanc','812-3504 A, Av.',24263,'Western Islands',0),
+  (DEFAULT,199165796049,'Imelda Oneal','5679 Dolor. Road',67312,'Merdorp',0),
+  (DEFAULT,199385072168,'Charde Ellison','954-612 Vel St.',84492,'Dordrecht',0),
+  (DEFAULT,199728922836,'Lysandra Whitaker','P.O. Box 549, 6016 Dolor Rd.',55743,'Cartagena del Chairá',0),
+  (DEFAULT,200385808282,'Amir Crane','Ap #608-9829 Nulla. Ave',65882,'Schönebeck',0),
+  (DEFAULT,199808248404,'Lev Middleton','P.O. Box 334, 7389 Auctor Av.',28580,'Balfour',0),
+  (DEFAULT,200656086248,'Amery Roberson','Ap #455-617 Ante St.',56885,'Palma de Mallorca',0);
+INSERT INTO students (student_id,personal_number,name,street_name,zip_code,city,discount_percentage)
+VALUES
+  (DEFAULT,199885807826,'Lillian Gilmore','P.O. Box 288, 3427 Proin Road',66374,'Timaru',15),
+  (DEFAULT,199885807826,'Pokebowl Gilmore','P.O. Box 288, 3427 Proin Road',66374,'Timaru',15),
+  (DEFAULT,199885807826,'Yakiniku Gilmore','P.O. Box 288, 3427 Proin Road',66374,'Timaru',15),
+  (DEFAULT,199885807826,'Salmon Gilmore','P.O. Box 288, 3427 Proin Road',66374,'Timaru',15),
+  (DEFAULT,199170743933,'Jared Chandler','358-5978 At, St.',67565,'Arras',5),
+  (DEFAULT,199170743933,'Subway Chandler','358-5978 At, St.',67565,'Arras',5),
+  (DEFAULT,201812468824,'Indira Curry','178-2492 At St.',74122,'Simpang',5),
+  (DEFAULT,201812468824,'Indian Curry','178-2492 At St.',74122,'Simpang',5),
+  (DEFAULT,201109160644,'Alea Gallegos','P.O. Box 850, 4304 Turpis Av.',61223,'Märsta',5),
+  (DEFAULT,201109160644,'Patatas Gallegos','P.O. Box 850, 4304 Turpis Av.',61223,'Märsta',5),
+  (DEFAULT,199935772265,'Pascale Richards','Ap #949-686 Massa. Ave',16767,'Mustafakemalpaşa',5),
+  (DEFAULT,199935772265,'Pedro Richards','Ap #949-686 Massa. Ave',16767,'Mustafakemalpaşa',5);
+
 
 
 INSERT INTO siblings_on_school (student_id,sibling_id)
@@ -36,7 +73,17 @@ VALUES
   (2,23),
   (3,24),
   (4,25),
-  (5,26);
+  (5,26),
+  (47,48),
+  (47,49),
+  (47,50),
+  (48,49),
+  (48,50),
+  (49,50),
+  (51,52),
+  (53,54),
+  (55,56),
+  (57,58);
 
 INSERT INTO instructors (instructor_id,personal_number,name,street_name,zip_code,city)
 VALUES
@@ -167,23 +214,97 @@ VALUES
 INSERT INTO instructor_instruments (instructor_id,instrument_type)
 VALUES
   (1,'guitar'),
+  (1,'flute'),
+  (1,'bugle'),
+  (1,'french horn'),
   (2,'cello'),
+  (2,'accordion'),
+  (2,'bass guitar'),
   (3,'bass guitar'),
+  (3,'harp'),
+  (3,'electrical guitar'),
   (4,'bongo drums'),
+  (4,'harmonica'),
+  (4,'drums'),
   (5,'guitar');
 
-INSERT INTO instructor_availability (instructor_id,from_time,to_time)
+INSERT INTO instructor_availability (scheduling_id,instructor_id,from_time,to_time)
 VALUES
-  (1,'2023-11-21 06:18','2023-11-21 08:26'),
-  (2,'2023-11-21 05:04','2023-11-21 07:00'),
-  (3,'2023-11-21 06:57','2023-11-21 09:13'),
-  (4,'2023-11-21 11:36','2023-11-21 21:14'),
-  (5,'2023-11-21 02:12','2023-11-21 11:08'),
-  (1,'2023-11-22 06:18','2023-11-21 08:26'),
-  (2,'2023-11-22 05:04','2023-11-21 07:00'),
-  (3,'2023-11-22 06:57','2023-11-21 09:13'),
-  (4,'2023-11-22 11:36','2023-11-21 21:14'),
-  (5,'2023-11-22 02:12','2023-11-21 11:08');
+  (DEFAULT,1,'2023-11-23 08:00','2023-11-23 09:00'),
+  (DEFAULT,2,'2023-11-23 04:30','2023-11-23 06:30'),
+  (DEFAULT,3,'2023-11-23 07:30','2023-11-23 08:30'),
+  (DEFAULT,4,'2023-11-23 13:00','2023-11-23 15:00'),
+  (DEFAULT,5,'2023-11-23 06:00','2023-11-23 09:00'),
+  (DEFAULT,1,'2023-11-24 08:00','2023-11-24 09:00'),
+  (DEFAULT,2,'2023-11-24 04:30','2023-11-24 06:30'),
+  (DEFAULT,3,'2023-11-24 07:30','2023-11-24 08:30'),
+  (DEFAULT,4,'2023-11-24 13:00','2023-11-24 15:00'),
+  (DEFAULT,5,'2023-11-24 06:00','2023-11-24 09:00'),
+  (DEFAULT,1,'2023-11-25 08:00','2023-11-25 09:00'),
+  (DEFAULT,2,'2023-11-25 04:30','2023-11-25 06:30'),
+  (DEFAULT,3,'2023-11-25 07:30','2023-11-25 08:30'),
+  (DEFAULT,4,'2023-11-25 13:00','2023-11-25 15:00'),
+  (DEFAULT,5,'2023-11-25 06:00','2023-11-25 09:00'),
+  (DEFAULT,1,'2023-11-26 08:00','2023-11-26 09:00'),
+  (DEFAULT,2,'2023-11-26 04:30','2023-11-26 06:30'),
+  (DEFAULT,3,'2023-11-26 07:30','2023-11-26 08:30'),
+  (DEFAULT,4,'2023-11-26 13:00','2023-11-26 15:00'),
+  (DEFAULT,5,'2023-11-26 06:00','2023-11-26 09:00'),
+  (DEFAULT,1,'2023-11-27 08:00','2023-11-27 09:00'),
+  (DEFAULT,2,'2023-11-27 04:30','2023-11-27 06:30'),
+  (DEFAULT,3,'2023-11-27 07:30','2023-11-27 08:30'),
+  (DEFAULT,4,'2023-11-27 13:00','2023-11-27 15:00'),
+  (DEFAULT,5,'2023-11-27 06:00','2023-11-27 09:00'),
+  (DEFAULT,1,'2023-11-28 08:00','2023-11-28 09:00'),
+  (DEFAULT,2,'2023-11-28 04:30','2023-11-28 06:30'),
+  (DEFAULT,3,'2023-11-28 07:30','2023-11-28 08:30'),
+  (DEFAULT,4,'2023-11-28 13:00','2023-11-28 15:00'),
+  (DEFAULT,5,'2023-11-28 06:00','2023-11-28 09:00'),
+  (DEFAULT,1,'2023-11-29 08:00','2023-11-29 09:00'),
+  (DEFAULT,2,'2023-11-29 04:30','2023-11-29 06:30'),
+  (DEFAULT,3,'2023-11-29 07:30','2023-11-29 08:30'),
+  (DEFAULT,4,'2023-11-29 13:00','2023-11-29 15:00'),
+  (DEFAULT,5,'2023-11-29 06:00','2023-11-29 09:00'),
+  (DEFAULT,1,'2023-11-30 08:00','2023-11-30 09:00'),
+  (DEFAULT,2,'2023-11-30 04:30','2023-11-30 06:30'),
+  (DEFAULT,3,'2023-11-30 07:30','2023-11-30 08:30'),
+  (DEFAULT,4,'2023-11-30 13:00','2023-11-30 15:00'),
+  (DEFAULT,5,'2023-11-30 06:00','2023-11-30 09:00'),
+  (DEFAULT,1,'2023-12-01 08:00','2023-12-01 09:00'),
+  (DEFAULT,2,'2023-12-01 04:30','2023-12-01 06:30'),
+  (DEFAULT,3,'2023-12-01 07:30','2023-12-01 08:30'),
+  (DEFAULT,4,'2023-12-01 13:00','2023-12-01 15:00'),
+  (DEFAULT,5,'2023-12-01 06:00','2023-12-01 09:00'),
+  (DEFAULT,1,'2023-12-02 08:00','2023-12-02 09:00'),
+  (DEFAULT,2,'2023-12-02 04:30','2023-12-02 06:30'),
+  (DEFAULT,3,'2023-12-02 07:30','2023-12-02 08:30'),
+  (DEFAULT,4,'2023-12-02 13:00','2023-12-02 15:00'),
+  (DEFAULT,5,'2023-12-02 06:00','2023-12-02 09:00'),
+  (DEFAULT,1,'2023-12-03 08:00','2023-12-03 09:00'),
+  (DEFAULT,2,'2023-12-03 04:30','2023-12-03 06:30'),
+  (DEFAULT,3,'2023-12-03 07:30','2023-12-03 08:30'),
+  (DEFAULT,4,'2023-12-03 13:00','2023-12-03 15:00'),
+  (DEFAULT,5,'2023-12-03 06:00','2023-12-03 09:00'),
+  (DEFAULT,1,'2023-12-04 08:00','2023-12-04 09:00'),
+  (DEFAULT,2,'2023-12-04 04:30','2023-12-04 06:30'),
+  (DEFAULT,3,'2023-12-04 07:30','2023-12-04 08:30'),
+  (DEFAULT,4,'2023-12-04 13:00','2023-12-04 15:00'),
+  (DEFAULT,5,'2023-12-04 06:00','2023-12-04 09:00'),
+  (DEFAULT,1,'2023-12-05 08:00','2023-12-05 09:00'),
+  (DEFAULT,2,'2023-12-05 04:30','2023-12-05 06:30'),
+  (DEFAULT,3,'2023-12-05 07:30','2023-12-05 08:30'),
+  (DEFAULT,4,'2023-12-05 13:00','2023-12-05 15:00'),
+  (DEFAULT,5,'2023-12-05 06:00','2023-12-05 09:00'),
+  (DEFAULT,1,'2023-12-06 08:00','2023-12-06 09:00'),
+  (DEFAULT,2,'2023-12-06 04:30','2023-12-06 06:30'),
+  (DEFAULT,3,'2023-12-06 07:30','2023-12-06 08:30'),
+  (DEFAULT,4,'2023-12-06 13:00','2023-12-06 15:00'),
+  (DEFAULT,5,'2023-12-06 06:00','2023-12-06 09:00'),
+  (DEFAULT,1,'2023-12-07 08:00','2023-12-07 09:00'),
+  (DEFAULT,2,'2023-12-07 04:30','2023-12-07 06:30'),
+  (DEFAULT,3,'2023-12-07 07:30','2023-12-07 08:30'),
+  (DEFAULT,4,'2023-12-07 13:00','2023-12-07 15:00'),
+  (DEFAULT,5,'2023-12-07 06:00','2023-12-07 09:00');
 
 
 
@@ -204,52 +325,181 @@ ENSINT	Ensemble	Intermediate	600	200
 ENSADV	Ensemble	Advanced	900	300
 \.
 
+
 INSERT INTO lessons (lesson_id,price_id,location,start_time,end_time,instructor_id,instrument_type,min_student_limit,max_student_limit,target_genre,lesson_type,skill_level)
 VALUES
-  (DEFAULT,'SOLBEG','A','2023-11-23 08:00',NULL,1,'guitar',1,3,'Rock','Solitary','Beginner'),
-  (DEFAULT,'SOLINT','B','2023-11-23 04:30',NULL,2,'cello',1,3,'Rock','Solitary','Intermediate'),
-  (DEFAULT,'GROADV','C','2023-11-23 05:30','2023-11-23 07:30',3,'bass guitar',2,4,'Pop','Group','Advanced'),
-  (DEFAULT,'GROBEG','A','2023-11-23 10:00','2023-11-23 12:00',4,'bongo drums',2,4,'Pop','Group','Beginner'),
-  (DEFAULT,'ENSINT','Zoom','2023-11-23 04:00','2023-11-23 06:00',5,'guitar',1,5,'Punk','Ensemble','Intermediate');
+  (DEFAULT,'SOLBEG','A','2023-11-23 08:00',NULL,1,'guitar',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-23 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-23 05:30','2023-11-23 07:30',3,'bass guitar',2,4,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-23 11:00','2023-11-23 13:00',4,'bongo drums',2,8,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-23 04:00','2023-11-23 06:00',5,NULL,2,5,'Punk','Ensemble','Intermediate'),
+  (DEFAULT,'SOLADV','A','2023-11-24 08:00',NULL,1,'flute',1,1,NULL,'Solitary','Advanced'),
+  (DEFAULT,'SOLINT','B','2023-11-24 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-24 05:30','2023-11-24 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-24 11:00','2023-11-24 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2023-11-24 04:00','2023-11-24 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'SOLBEG','A','2023-11-25 08:00',NULL,1,'bugle',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-25 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-25 05:30','2023-11-25 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-25 11:00','2023-11-25 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-25 04:00','2023-11-25 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-11-26 08:00',NULL,1,'french horn',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-26 04:30',NULL,2,'bass guitar',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-26 05:30','2023-11-26 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-26 11:00','2023-11-26 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-26 04:00','2023-11-26 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-11-27 08:00',NULL,1,'french horn',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-27 04:30',NULL,2,'bass guitar',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-27 05:30','2023-11-27 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-27 11:00','2023-11-27 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-27 04:00','2023-11-27 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-12-02 08:00',NULL,1,'guitar',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-12-02 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-02 05:30','2023-12-02 07:30',3,'bass guitar',2,4,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-02 11:00','2023-12-02 13:00',4,'bongo drums',2,8,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-12-02 04:00','2023-12-02 06:00',5,NULL,2,5,'Punk','Ensemble','Intermediate'),
+  (DEFAULT,'SOLADV','A','2023-12-01 08:00',NULL,1,'flute',1,1,NULL,'Solitary','Advanced'),
+  (DEFAULT,'SOLINT','B','2023-12-01 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-01 05:30','2023-12-01 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-01 11:00','2023-12-01 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2023-12-01 04:00','2023-12-01 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'SOLBEG','A','2023-11-30 08:00',NULL,1,'bugle',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-30 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-30 05:30','2023-11-30 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-30 11:00','2023-11-30 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-30 04:00','2023-11-30 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-11-29 08:00',NULL,1,'french horn',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-29 04:30',NULL,2,'bass guitar',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-29 05:30','2023-11-29 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-29 11:00','2023-11-29 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-29 04:00','2023-11-29 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-11-28 08:00',NULL,1,'french horn',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-11-28 04:30',NULL,2,'bass guitar',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-11-28 05:30','2023-11-28 07:30',3,'electric guitar',3,10,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-11-28 11:00','2023-11-28 13:00',4,'drums',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-11-28 04:00','2023-11-28 06:00',5,NULL,2,5,'Gospel','Ensemble','Intermediate'),
+  (DEFAULT,'SOLBEG','A','2023-12-03 08:00',NULL,1,'guitar',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-12-03 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-03 05:30','2023-12-03 07:30',3,'bass guitar',2,4,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-03 11:00','2023-12-03 13:00',4,'bongo drums',2,8,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-12-03 04:00','2023-12-03 06:00',5,NULL,2,5,'Punk','Ensemble','Intermediate'),
+  (DEFAULT,'SOLADV','A','2023-12-04 08:00',NULL,1,'flute',1,1,NULL,'Solitary','Advanced'),
+  (DEFAULT,'SOLINT','B','2023-12-04 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-04 05:30','2023-12-04 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-04 11:00','2023-12-04 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2023-12-04 04:00','2023-12-04 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'SOLBEG','A','2023-12-05 08:00',NULL,1,'guitar',1,1,NULL,'Solitary','Beginner'),
+  (DEFAULT,'SOLINT','B','2023-12-05 04:30',NULL,2,'cello',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-05 05:30','2023-12-05 07:30',3,'bass guitar',2,4,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-05 11:00','2023-12-05 13:00',4,'bongo drums',2,8,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSINT','Zoom','2023-12-05 04:00','2023-12-05 06:00',5,NULL,2,5,'Punk','Ensemble','Intermediate'),
+  (DEFAULT,'SOLADV','A','2023-12-06 08:00',NULL,1,'flute',1,1,NULL,'Solitary','Advanced'),
+  (DEFAULT,'SOLINT','B','2023-12-06 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-06 05:30','2023-12-06 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-06 11:00','2023-12-06 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2023-12-06 04:00','2023-12-06 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'SOLADV','A','2023-12-07 08:00',NULL,1,'flute',1,1,NULL,'Solitary','Advanced'),
+  (DEFAULT,'SOLINT','B','2023-12-07 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
+  (DEFAULT,'GROADV','C','2023-12-07 05:30','2023-12-07 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2023-12-07 11:00','2023-12-07 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2023-12-07 04:00','2023-12-07 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced');
 
-INSERT INTO student_lessons (student_id,lesson_id,price_id)
+
+
+
+INSERT INTO student_lessons (student_id,lesson_id)
 VALUES
-  (1,1,'SOLBEG'),
-  (2,2,'SOLINT'),
-  (3,3,'GROADV'),
-  (4,4,'GROBEG'),
-  (5,5,'ENSINT'),
-  (6,3,'GROADV'),
-  (7,4,'GROBEG'),
-  (8,5,'ENSINT');
+  (1,1),
+  (2,2),
+  (3,3),
+  (4,4),
+  (5,5),
+  (6,3),
+  (7,4),
+  (8,5),
+  (9,3),
+  (10,5),
+  (11,5),
+  (12,6),
+  (13,7),
+  (14,8),
+  (15,8),
+  (16,8),
+  (17,9),
+  (18,9),
+  (19,10),
+  (20,10),
+  (21,10),
+  (22,10),
+  (23,11),
+  (24,12),
+  (25,13),
+  (26,13),
+  (27,13),
+  (28,14),
+  (29,14),
+  (30,15),
+  (31,15),
+  (32,15),
+  (33,16),
+  (34,17),
+  (35,18),
+  (36,18),
+  (37,18),
+  (38,19),
+  (39,19),
+  (40,19),
+  (41,20),
+  (42,20),
+  (43,20),
+  (44,20),
+  (45,20),
+  (46,21),
+  (47,22),
+  (48,23),
+  (49,23),
+  (50,24),
+  (51,24),
+  (52,24),
+  (53,25),
+  (54,25),
+  (55,26),
+  (56,27),
+  (57,28),
+  (58,28),
+  (1,28),
+  
+  (2,30),
+  (3,30),
+  (4,30);
 
-COPY public.instruments (instrument_type, instrument_brand, available) FROM stdin;
-accordion	Gibson	FALSE
-acoustic guitar	Fender	FALSE
-bagpipe	NULL	FALSE
-banjo	Roland	FALSE
-bass guitar	Yamaha	FALSE
-bongo drums	NULL	TRUE
-bugle	Harman Professional	TRUE
-cello	Steinway	TRUE
-clarinet	Shure	TRUE
-cymbals	Yamaha	TRUE
-drums	Gibson	TRUE
-electric guitar	Roland	TRUE
-flute	Sennheiser	TRUE
-French horn	Baguette	TRUE
-harmonica	NULL	TRUE
-harp	Roland	TRUE
-\.
 
 
-INSERT INTO leased_instruments (student_id,instrument_id,lease_period_start,price_per_month)
+INSERT INTO public.instruments (instrument_id, instrument_type, instrument_brand, available, price_per_month) VALUES
+  (DEFAULT,'accordion', 'Gibson', FALSE, 300),
+  (DEFAULT,'acoustic guitar', 'Fender', FALSE, 500),
+  (DEFAULT,'bagpipe', NULL, FALSE, 200),
+  (DEFAULT,'banjo', 'Roland', FALSE, 100),
+  (DEFAULT,'bass guitar', 'Yamaha', FALSE, 400),
+  (DEFAULT,'bongo drums', NULL, TRUE, 100),
+  (DEFAULT,'bugle', 'Harman Professional', TRUE, 300),
+  (DEFAULT,'cello', 'Steinway', TRUE, 200),
+  (DEFAULT,'clarinet', 'Shure', TRUE, 400),
+  (DEFAULT,'cymbals', 'Yamaha', TRUE, 100),
+  (DEFAULT,'drums', 'Gibson', TRUE, 100),
+  (DEFAULT,'electric guitar', 'Roland', TRUE, 400),
+  (DEFAULT,'flute', 'Sennheiser', TRUE, 300),
+  (DEFAULT,'french horn', 'Baguette', TRUE, 300),
+  (DEFAULT,'harmonica', NULL, TRUE, 500),
+  (DEFAULT,'harp', 'Roland', TRUE, 100);
+
+INSERT INTO leased_instruments (student_id,instrument_id,lease_period_start)
 VALUES
-  (1,1,'2023-11-21 01:23',300),
-  (2,2,'2023-11-21 10:45',500),
-  (3,3,'2023-11-21 08:20',200),
-  (4,4,'2023-11-21 01:42',100),
-  (5,5,'2023-11-21 10:18',400);
+  (1,1,'2023-11-21 01:23'),
+  (2,2,'2023-11-21 10:45'),
+  (3,3,'2023-11-21 08:20'),
+  (4,4,'2023-11-21 01:42'),
+  (5,5,'2023-11-21 10:18');
 
 
 

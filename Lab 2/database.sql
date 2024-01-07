@@ -53,11 +53,26 @@ ALTER TABLE public.contact_person_phone_numbers OWNER TO postgres;
 CREATE TABLE public.instructor_availability (
     instructor_id integer NOT NULL,
     from_time timestamp(6) without time zone,
-    to_time timestamp(6) without time zone
+    to_time timestamp(6) without time zone,
+    scheduling_id integer NOT NULL
 );
 
 
 ALTER TABLE public.instructor_availability OWNER TO postgres;
+
+--
+-- Name: instructor_availability_scheduling_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.instructor_availability ALTER COLUMN scheduling_id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.instructor_availability_scheduling_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
 
 --
 -- Name: instructor_emails; Type: TABLE; Schema: public; Owner: postgres
@@ -133,7 +148,8 @@ CREATE TABLE public.instruments (
     instrument_id integer NOT NULL,
     instrument_type character varying(100) NOT NULL,
     instrument_brand character varying(100),
-    available boolean NOT NULL
+    available boolean NOT NULL,
+    price_per_month character varying(100)
 );
 
 
@@ -162,11 +178,25 @@ CREATE TABLE public.leased_instruments (
     instrument_id integer NOT NULL,
     lease_period_start date NOT NULL,
     lease_period_end date,
-    price_per_month character varying(100) NOT NULL
+    lease_id integer NOT NULL
 );
 
 
 ALTER TABLE public.leased_instruments OWNER TO postgres;
+
+--
+-- Name: leased_instruments_lease_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.leased_instruments ALTER COLUMN lease_id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.leased_instruments_lease_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
 
 --
 -- Name: lessons; Type: TABLE; Schema: public; Owner: postgres
@@ -249,8 +279,7 @@ ALTER TABLE public.student_emails OWNER TO postgres;
 
 CREATE TABLE public.student_lessons (
     student_id integer NOT NULL,
-    lesson_id integer NOT NULL,
-    price_id character varying(100) NOT NULL
+    lesson_id integer NOT NULL
 );
 
 
@@ -300,6 +329,176 @@ ALTER TABLE public.students ALTER COLUMN student_id ADD GENERATED ALWAYS AS IDEN
 
 
 --
+-- Data for Name: contact_person_emails; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.contact_person_emails (email, student_id, relationship) FROM stdin;
+\.
+
+
+--
+-- Data for Name: contact_person_phone_numbers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.contact_person_phone_numbers (phone_number, student_id, relationship) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instructor_availability; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructor_availability (instructor_id, from_time, to_time, scheduling_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instructor_emails; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructor_emails (email, instructor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instructor_instruments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructor_instruments (instructor_id, instrument_type) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instructor_phone_numbers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructor_phone_numbers (phone_number, instructor_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instructors; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructors (instructor_id, personal_number, name, street_name, zip_code, city) FROM stdin;
+\.
+
+
+--
+-- Data for Name: instruments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instruments (instrument_id, instrument_type, instrument_brand, available, price_per_month) FROM stdin;
+\.
+
+
+--
+-- Data for Name: leased_instruments; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.leased_instruments (student_id, instrument_id, lease_period_start, lease_period_end, lease_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: lessons; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.lessons (lesson_id, price_id, start_time, instructor_id, min_student_limit, max_student_limit, target_genre, instrument_type, lesson_type, skill_level, end_time, location) FROM stdin;
+\.
+
+
+--
+-- Data for Name: pricing_schemes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.pricing_schemes (price_id, lesson_type, skill_level, instructor_lesson_salary, lesson_price) FROM stdin;
+\.
+
+
+--
+-- Data for Name: siblings_on_school; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.siblings_on_school (student_id, sibling_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: student_emails; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.student_emails (email, student_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: student_lessons; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.student_lessons (student_id, lesson_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: student_phone_numbers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.student_phone_numbers (phone_number, student_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.students (student_id, personal_number, name, street_name, zip_code, city, discount_percentage) FROM stdin;
+\.
+
+
+--
+-- Name: instructor_availability_scheduling_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.instructor_availability_scheduling_id_seq', 1, false);
+
+
+--
+-- Name: instructors_instructor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.instructors_instructor_id_seq', 1, false);
+
+
+--
+-- Name: instruments_instrument_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.instruments_instrument_id_seq', 1, false);
+
+
+--
+-- Name: leased_instruments_lease_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.leased_instruments_lease_id_seq', 1, false);
+
+
+--
+-- Name: lessons_lesson_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.lessons_lesson_id_seq', 1, false);
+
+
+--
+-- Name: students_student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.students_student_id_seq', 1, false);
+
+
+--
 -- Name: contact_person_emails contact_person_email_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -313,6 +512,14 @@ ALTER TABLE ONLY public.contact_person_emails
 
 ALTER TABLE ONLY public.contact_person_phone_numbers
     ADD CONSTRAINT contact_person_phone_numbers_pkey PRIMARY KEY (phone_number);
+
+
+--
+-- Name: instructor_availability instructor_availability_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.instructor_availability
+    ADD CONSTRAINT instructor_availability_pkey PRIMARY KEY (scheduling_id);
 
 
 --
@@ -345,6 +552,14 @@ ALTER TABLE ONLY public.instructors
 
 ALTER TABLE ONLY public.instruments
     ADD CONSTRAINT instruments_pkey PRIMARY KEY (instrument_id);
+
+
+--
+-- Name: leased_instruments leased_instruments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.leased_instruments
+    ADD CONSTRAINT leased_instruments_pkey PRIMARY KEY (lease_id);
 
 
 --
@@ -481,14 +696,6 @@ ALTER TABLE ONLY public.student_emails
 
 ALTER TABLE ONLY public.student_lessons
     ADD CONSTRAINT student_lessons_lesson_id_fkey FOREIGN KEY (lesson_id) REFERENCES public.lessons(lesson_id) ON DELETE CASCADE;
-
-
---
--- Name: student_lessons student_lessons_price_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.student_lessons
-    ADD CONSTRAINT student_lessons_price_id_fkey FOREIGN KEY (price_id) REFERENCES public.pricing_schemes(price_id);
 
 
 --
