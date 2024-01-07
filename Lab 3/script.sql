@@ -62,3 +62,7 @@ HAVING
    COUNT(l.lesson_id) > 0 -- Adjust this threshold as needed
 ORDER BY
    COUNT(l.lesson_id) DESC;
+   
+SELECT * FROM public.yearly_lessons;
+SELECT * FROM public.siblings;
+SELECT * FROM public.instructor_lessons_this_month;
