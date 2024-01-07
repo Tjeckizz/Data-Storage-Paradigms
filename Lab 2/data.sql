@@ -402,7 +402,13 @@ VALUES
   (DEFAULT,'SOLINT','B','2023-12-07 04:30',NULL,2,'accordion',1,1,NULL,'Solitary','Intermediate'),
   (DEFAULT,'GROADV','C','2023-12-07 05:30','2023-12-07 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
   (DEFAULT,'GROBEG','A','2023-12-07 11:00','2023-12-07 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
-  (DEFAULT,'ENSADV','Zoom','2023-12-07 04:00','2023-12-07 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced');
+  (DEFAULT,'ENSADV','Zoom','2023-12-07 04:00','2023-12-07 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'GROADV','C','2024-01-07 05:30','2024-01-07 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2024-01-07 11:00','2024-01-07 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2024-01-07 04:00','2024-01-07 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced'),
+  (DEFAULT,'GROADV','C','2024-01-09 05:30','2024-01-09 07:30',3,'harp',3,7,NULL,'Group','Advanced'),
+  (DEFAULT,'GROBEG','A','2024-01-11 11:00','2024-01-11 13:00',4,'harmonica',2,4,NULL,'Group','Beginner'),
+  (DEFAULT,'ENSADV','Zoom','2024-01-15 04:00','2024-01-15 06:00',5,NULL,4,9,'Pop','Ensemble','Advanced');
 
 
 
